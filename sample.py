@@ -3,4 +3,10 @@ print("ok")
 
 # COMMAND ----------
 
-print("editing here in the ide")
+import sys
+import os
+sys.path.append(os.path.abspath('..'))
+
+# COMMAND ----------
+from helloworld import hello_world
+hello_world()
