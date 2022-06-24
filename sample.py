@@ -5,6 +5,7 @@ print("ok")
 
 import sys
 import os
+from pyspark.sql.functions import *
 sys.path.append(os.path.abspath('..'))
 
 # COMMAND ----------
@@ -16,4 +17,4 @@ hello_world()
 # rel_path = "sample/data/sample_user_data.csv"
 # abs_file_path = os.path.join(script_dir, rel_path)
 df = spark.read.format('csv').options(header='true', inferSchema='true').load(f"file:{os.getcwd()}/data/sample_user_data.csv")
-display(df)
+print(df.select(col("name")).first.getString(0))
