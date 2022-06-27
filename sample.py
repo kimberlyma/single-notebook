@@ -18,5 +18,5 @@ print(df.collect()[0]['name'])
 # MAGIC import java.io._
 # MAGIC val path : String = dbutils.notebook.getContext().notebookPath.get
 # MAGIC 
-# MAGIC val df = spark.read.format("csv").option("header","true").option("inferSchema", "true").load(s"file:${parentFile}/data/sample_user_data.csv")
+# MAGIC val df = spark.read.format("csv").option("header","true").option("inferSchema", "true").load(s"file:${path}/data/sample_user_data.csv")
 # MAGIC println(df.first().getInt(0))
