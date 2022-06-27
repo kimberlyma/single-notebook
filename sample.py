@@ -15,8 +15,9 @@ print(df.collect()[0]['name'])
 # COMMAND ----------
 # MAGIC %scala
 # MAGIC import java.io._
-# MAGIC val path : String = dbutils.notebook.getContext().notebookPath.get
+# MAGIC val notebookPath = dbutils.notebook().getContext().notebookPath.get
+# MAGIC val folderOnly = notebookPath.substring(1,notebookPath.lastIndexOf("/"))
 # MAGIC 
-# MAGIC val df = spark.read.format("csv").option("header","true").option("inferSchema", "true").load(s"file:${path}/data/sample_user_data.csv")
-# MAGIC println(df.first().getInt(0))
+# MAGIC val df = spark.read.format("csv").option("header","true").option("inferSchema", "true").load(s"file:/Workspace/${folderOnly}/data/sample_user_data.csv")
+# MAGIC println(df.first().getString(0))
 
