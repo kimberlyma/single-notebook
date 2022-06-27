@@ -9,7 +9,8 @@ from pyspark.sql.functions import *
 #sys.path.append(os.path.abspath('..'))
 
 # COMMAND ----------
-from helloworld import hello_world
+importlib.import_module("helloworld.hello_world")
+
 hello_world()
 
 # COMMAND ----------
