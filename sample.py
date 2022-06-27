@@ -12,8 +12,6 @@ from pyspark.sql.functions import *
 df = spark.read.format('csv').options(header='true', inferSchema='true').load(f"file:{os.getcwd()}/data/sample_user_data.csv")
 print(df.collect()[0]['name'])
 
-print(inspect.getmodule(read_csv).__name__)
-
 # COMMAND ----------
 
 # MAGIC %scala
