@@ -1,6 +1,12 @@
 # Databricks notebook source
-print("ok")
+import sys
+import os
+sys.path.append(os.path.abspath('..'))
 
 # COMMAND ----------
 
-print("editing here in the ide")
+from some_other_file import hello_world
+
+# COMMAND ----------
+
+hello_world()
