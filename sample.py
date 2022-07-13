@@ -20,4 +20,3 @@ print(df.collect()[0]['name'])
 # MAGIC 
 # MAGIC val df = spark.read.format("csv").option("header","true").option("inferSchema", "true").load(s"file:/Workspace/${folderOnly}/data/sample_user_data.csv")
 # MAGIC println(df.first().getString(0))
-
