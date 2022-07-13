@@ -1,5 +1,5 @@
 # Databricks notebook source
-print("ok2")
+print("ok")
 
 # COMMAND ----------
 
